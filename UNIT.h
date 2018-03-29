@@ -17,7 +17,7 @@ public:
 class defender : public UNIT {
 public:
 	std::string info();
-	defender();
+	explicit defender();
 	~defender()
 	{}
 };
@@ -25,13 +25,13 @@ public:
 class long_range_damage : public UNIT {
 public:
 	std::string info();
-	long_range_damage();
+	explicit long_range_damage();
 	~long_range_damage() {}
 };
 
 class great_damage : public UNIT {
 public:
 	std::string info();
-	great_damage();
+	explicit great_damage();
 	~great_damage() {}
 };
