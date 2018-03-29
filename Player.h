@@ -19,7 +19,7 @@ private:
 public:
 
 
-	Player(int);
+	explicit Player(int);
 	void take_statistic();
 	int take_index(std::string);
 	void take_units(std::string, int);
