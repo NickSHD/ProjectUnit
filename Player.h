@@ -6,23 +6,22 @@
 
 #include "AbstractFactory.h"
 #include "UNIT.h"
+#include "TYPE.h"
 
 class Player {
+
 private:
 
-	static ObjectFactory< UNIT, std::string > RealFactory;
+	static ObjectFactory< UNIT, Type::type > RealFactory;
 	std::vector< UNIT* > army;
-	std::map < std::string, int > stat;
+	std::map < Type::type, int > stat;
 	void print_pair(std::pair < std::string, int >);
 
-
 public:
-
 
 	explicit Player(int);
 	void take_statistic();
 	int take_index(std::string);
 	void take_units(std::string, int);
-
 
 };
