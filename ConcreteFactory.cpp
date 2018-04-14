@@ -2,14 +2,16 @@
 #include <map>
 #include <string>
 
+#include "Initial_Values.h"
 #include "AbstractFactory.h"
 #include "ConcreteFactory.h"
 #include "UNIT.h"
+#include "TYPE.h"
 
-ObjectFactory < UNIT, std::string >* ConcreteFactory::RealFactory = new ObjectFactory < UNIT, std::string >();
+ObjectFactory < UNIT, Type::type >* ConcreteFactory::RealFactory = new ObjectFactory < UNIT, Type::type >();
 
 void ConcreteFactory::update() {
-	RealFactory->add < defender >("defender");
-	RealFactory->add < great_damage >("great_damage");
-	RealFactory->add < long_range_damage >("long_range_damage");
+	RealFactory->add < defender >(Type::type::defender);
+	RealFactory->add < long_range_damage >(Type::type::long_range_damage);
+	RealFactory->add < great_damage >(Type::type::great_damage);
 }
